@@ -1,0 +1,28 @@
+{
+  "name": "softuni_scaffold_express_mongodb_mongoose_handlebars",
+  "version": "1.0.0",
+  "description": "Setting and preparing all the required technologies for the final exam in the back-end part of the course",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GogGitCh/SoftUni_Scaffold_Express_MongoDB_Mongoose_Handlebars.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GogGitCh/SoftUni_Scaffold_Express_MongoDB_Mongoose_Handlebars/issues"
+  },
+  "homepage": "https://github.com/GogGitCh/SoftUni_Scaffold_Express_MongoDB_Mongoose_Handlebars#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.7",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.2.3"
+  }
+}
