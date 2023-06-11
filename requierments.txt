@@ -6,6 +6,7 @@
 [x] - hashing of password
 [x] - Json Web Token
 [x] Error handling
+[x] User role guard 
 
 Full CRUD (application specific)
 - catalog
