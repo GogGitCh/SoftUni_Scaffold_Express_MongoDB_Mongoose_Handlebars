@@ -11,21 +11,26 @@ authController.get("/register", (req, res) => {
 
 authController.post("/register", async (req, res) => {
   try {
-    if (req.body.username == "" || req.body.password == "" || req.body.repass == "") {
+    if (
+      req.body.username == "" ||
+      req.body.password == "" ||
+      req.body.repass == ""
+    ) {
       throw new Error("All fields are required");
     }
     if (req.body.password !== req.body.repass) {
       throw new Error("Passwords must match!");
     }
 
+    //TODO check assignment to see if register creates session
     const token = await userService.register(
       req.body.username,
-      req.body.password,
+      req.body.password
     );
 
     res.cookie("token", token);
-    res.redirect("/auth/register");
-
+    //TODO check the correct redirect
+    res.redirect("/");
   } catch (error) {
     const errors = parseError(error);
 
@@ -38,6 +43,38 @@ authController.post("/register", async (req, res) => {
       },
     });
   }
+});
+
+authController.get("/login", (req, res) => {
+  res.render("login", {
+    title: "Login Page",
+  });
+});
+
+authController.post("/login", async (req, res) => {
+  try {
+    const token = await userService.login(req.body.username, req.body.password);
+
+    res.cookie('token', token); 
+    //TODO check the correct redirect
+    res.redirect('/') 
+  } catch (error) {
+    const errors = parseError(error);
+
+    res.render("login", {
+      title: "Login Page",
+      errors,
+      body: {
+        username: req.body.username,
+      },
+    });
+  }
+});
+
+
+authController.get('/logout', (req, res) => {
+  res.clearCookie('token');
+  res.redirect('/')
 });
 
 module.exports = authController;
