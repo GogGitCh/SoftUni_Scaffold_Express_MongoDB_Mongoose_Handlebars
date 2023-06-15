@@ -1,20 +1,20 @@
-const express = require('express');
-const expressConfig = require('./config/express');
-const databaseConfig = require('./config/database');
-const routesConfig = require('./config/routes');
+// const express = require('express');
+// const expressConfig = require('./config/express');
+// const databaseConfig = require('./config/database');
+// const routesConfig = require('./config/routes');
 
-const PORT = 3000;
+// const PORT = 3000;
 
 
-start();
+// start();
 
-async function start() {
-    const app = express();
+// async function start() {
+//     const app = express();
 
-    expressConfig(app);
-    await databaseConfig(app);
-    routesConfig (app);
+//     expressConfig(app);
+//     await databaseConfig(app);
+//     routesConfig (app);
 
-    app.listen(PORT, () => console.log(`Server listeneig on port ${PORT}`));
-    // .. execute config
-}
+//     app.listen(PORT, () => console.log(`Server listeneig on port ${PORT}`));
+//     // .. execute config
+// }

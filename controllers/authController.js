@@ -2,6 +2,8 @@ const authController = require("express").Router();
 const userService = require("../services/userService");
 const { parseError } = require("../util/parser");
 
+const emailValidator = require('validator'); // if (emailValidator.isEmail(req.body.email) == false) // npm i validator
+
 authController.get("/register", (req, res) => {
   // TODO Replace with actual view by assignment
   res.render("register", {
